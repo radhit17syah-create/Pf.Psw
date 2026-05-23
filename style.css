@@ -1,0 +1,853 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    transition:.3s ease;
+}
+
+body{
+
+    background:#050505;
+
+    color:#d6d6d6;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+}
+
+
+/* NAVBAR */
+
+nav{
+
+    width:100%;
+
+    padding:25px 10%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:1000;
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#cfcfcf;
+
+    font-size:15px;
+}
+
+
+/* LOGO */
+
+.logo{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ffffff,
+    #c1121f,
+    #ffffff
+    );
+
+    background-size:200%;
+    -webkit-background-clip:text ;
+      -webkit-text-fill-color:transparent;
+
+    animation:
+    gradientMove 5s linear infinite,
+    logoFloat 4s ease-in-out infinite;
+}
+
+
+/* HERO */
+
+.hero{
+
+    width:100%;
+
+    min-height:85vh;
+
+    padding:0 10%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+}
+
+
+/* LEFT */
+
+.hero-left{
+
+    flex:1;
+}
+
+.mini-title{
+
+    color:#8d8d8d;
+
+    margin-bottom:15px;
+}
+
+.hero-left h1{
+
+    font-size:5rem;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+}
+
+.hero-left h1 span{
+
+    color:#c1121f;
+
+    text-shadow:
+    0 0 10px rgba(193,18,31,0.25);
+}
+
+.desc{
+
+    color:#8d8d8d;
+
+    line-height:1.8;
+
+    max-width:500px;
+
+    margin-bottom:30px;
+}
+
+
+/* BUTTON */
+
+button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    background:#c1121f;
+
+    color:white;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px rgba(193,18,31,0.3);
+}
+
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px rgba(193,18,31,0.4);
+}
+
+
+/* RIGHT */
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+/* IMAGE */
+
+.image-box{
+
+    position:relative;
+
+    width:420px;
+
+    height:520px;
+}
+
+.spiderman{
+
+    width:100%;
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    object-fit:contain;
+}
+
+
+/* MAIN IMAGE */
+
+.main-img{
+
+    z-index:3;
+
+    animation:floating 4s ease-in-out infinite;
+
+    filter:
+    drop-shadow(0 0 25px rgba(193,18,31,0.3));
+}
+
+
+/* GLITCH */
+
+.glitch{
+
+    opacity:0.4;
+
+    mix-blend-mode:screen;
+}
+
+.glitch1{
+
+    transform:translate(5px,-5px);
+
+    filter:hue-rotate(-20deg);
+
+    animation:glitch1 .25s infinite;
+}
+
+.glitch2{
+
+    transform:translate(-5px,5px);
+
+    filter:hue-rotate(220deg);
+
+    animation:glitch2 .25s infinite;
+}
+
+
+/* RED BLUR */
+
+.red-blur{
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#7a0b12;
+
+    filter:blur(150px);
+
+    border-radius:50%;
+
+    top:-150px;
+    right:-150px;
+
+    opacity:0.2;
+
+    z-index:-1;
+}
+
+
+/* PROGRESS BAR */
+
+#progress-bar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:#c1121f;
+
+    z-index:999999;
+}
+
+
+/* TYPING */
+
+.typing{
+
+    width:fit-content;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    border-right:2px solid #c1121f;
+
+    animation:
+    typing 3s steps(20) infinite alternate,
+    blink .6s infinite;
+}
+
+
+/* KEYFRAMES */
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes logoFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:200%;
+    }
+
+}
+
+@keyframes typing{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:220px;
+    }
+
+}
+
+@keyframes blink{
+
+    50%{
+        border-color:transparent;
+    }
+
+}
+
+@keyframes glitch1{
+
+    0%{
+        clip-path: inset(10% 0 80% 0);
+    }
+
+    100%{
+        clip-path: inset(40% 0 30% 0);
+    }
+
+}
+
+@keyframes glitch2{
+
+    0%{
+        clip-path: inset(80% 0 10% 0);
+    }
+
+    100%{
+        clip-path: inset(30% 0 40% 0);
+    }
+
+}
+
+.about{
+
+    width:100%;
+
+    padding:100px 10%;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.about-card{
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.03);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,0.03);
+}
+
+.about-card h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+    color:#c1121f;
+}
+
+.about-card p{
+
+    color:#9f9f9f;
+
+    line-height:2;
+
+    font-size:16px;
+}
+
+/* SKILLS SECTION */
+
+.skills-section{
+    padding: 100px 10%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.section-title{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #c62828;
+    letter-spacing: 4px;
+}
+
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skill-card{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,0,0,0.15);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.skill-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+.skill-card h3{
+    margin-bottom: 15px;
+    color: #ddd;
+    font-weight: 500;
+}
+
+.skill-bar{
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-bar span{
+    display: block;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #8b0000,
+        #c62828
+    );
+    border-radius: 20px;
+    animation: loadSkill 2s ease;
+}
+
+/* ANIMATION */
+
+@keyframes loadSkill{
+    from{
+        width: 0;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .navbar{
+        padding: 15px 5%;
+        backdrop-filter: blur(15px);
+    }
+
+    .logo{
+        font-size: 20px;
+    }
+
+    .nav-links{
+        gap: 15px;
+    }
+
+    .nav-links a{
+        font-size: 13px;
+    }
+
+    .hero{
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 5%;
+        gap: 40px;
+    }
+
+    .hero-text h1{
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .hero-text p{
+        font-size: 14px;
+    }
+
+    .spiderman-img{
+        width: 280px;
+    }
+
+    .skills-section{
+        padding: 70px 5%;
+    }
+
+    .section-title{
+        font-size: 28px;
+    }
+
+    .skill-card{
+        padding: 15px;
+    }
+
+}
+
+/* PARTICLES */
+
+.particles{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particles::before,
+.particles::after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+        rgba(255,0,0,0.08),
+        transparent
+    );
+    animation: moveParticles 15s linear infinite;
+}
+
+.particles::after{
+    top: 50%;
+    left: 60%;
+    animation-duration: 20s;
+}
+
+@keyframes moveParticles{
+    0%{
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100%{
+        transform: translateY(-200px) rotate(360deg);
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.skill-card,
+.social-card,
+.about-card{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.skill-card,
+.social-card,
+.about-card{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.hero-btn{
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+.hero-btn:hover::before{
+    left: 120%;
+}
+
+/* WEB SHOOTER EFFECT */
+
+.web-shoot{
+    position: fixed;
+    width: 2px;
+    height: 100vh;
+    background: linear-gradient(
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+
+    left: 20%;
+    top: -100%;
+    z-index: -1;
+
+    animation: webMove 6s linear infinite;
+}
+
+@keyframes webMove{
+
+    0%{
+        top: -100%;
+        transform: rotate(15deg);
+    }
+
+    100%{
+        top: 100%;
+        transform: rotate(-15deg);
+    }
+
+}
+
+/* RED LIGHTNING */
+
+.lightning{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.lightning::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: rgba(255,0,0,0.1);
+
+    left: 50%;
+
+    animation: flash 5s infinite;
+}
+
+@keyframes flash{
+
+    0%,90%,100%{
+        opacity: 0;
+    }
+
+    92%{
+        opacity: 1;
+        box-shadow:
+        0 0 20px red,
+        0 0 50px red;
+    }
+
+}
+
+/* CINEMATIC NOISE */
+
+.noise{
+    position: fixed;
+    inset: 0;
+    background-image:
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.skill-card,
+.hero-text,
+.spiderman-img{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s ease;
+}
+
+.skill-card.active,
+.hero-text.active,
+.spiderman-img.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* GLITCH EFFECT */
+
+.glitch{
+    position: relative;
+    color: #d1d1d1;
+    animation: glitch-skew 2s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.glitch::before{
+    top: -2px;
+    color: rgba(255,0,0,0.5);
+    z-index: -1;
+    animation: glitchTop 1s infinite linear alternate-reverse;
+}
+
+.glitch::after{
+    top: 2px;
+    color: rgba(1, 5, 7, 0.4);
+    z-index: -2;
+    animation: glitchBottom 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop{
+    0%{
+        transform: translate(0);
+    }
+
+    20%{
+        transform: translate(-2px,-2px);
+    }
+
+    40%{
+        transform: translate(2px,2px);
+    }
+
+    60%{
+        transform: translate(-1px,1px);
+    }
+
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes glitchBottom{
+    0%{
+        transform: translate(0);
+    }
+
+    20%{
+        transform: translate(2px,2px);
+    }
+
+    40%{
+        transform: translate(-2px,-1px);
+    }
+
+    60%{
+        transform: translate(1px,-1px);
+    }
+
+    100%{
+        transform: translate(0);
+    }
+}
